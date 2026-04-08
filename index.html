@@ -1,46 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Modern Portfolio | Web Developer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">Portfolio</div>
+                <nav class="nav-menu">
+                    <a href="#hero" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </header>
+
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a web developer passionate about creating beautiful and functional websites.</p>
-        </section>
-        <section id="projects">
-            <h2>My Projects</h2>
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Description of project 1.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Hi, I'm a Web Developer</h1>
+                    <p class="hero-subtitle">Creating beautiful, interactive, and user-friendly digital experiences</p>
+                    <a href="#projects" class="cta-button">View My Work</a>
+                </div>
+                <div class="hero-decoration"></div>
             </div>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: example@email.com</p>
+
+        <section id="about" class="about section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm passionate about building modern web applications that combine beautiful design with
+                            smooth functionality. With expertise in HTML, CSS, and JavaScript, I create responsive and
+                            accessible websites.</p>
+                        <p>I love turning ideas into interactive experiences and staying updated with the latest web
+                            technologies.</p>
+                    </div>
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">UI/UX</span>
+                            <span class="skill-tag">Web Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header"
+                            style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <h3>E-Commerce Platform</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>A fully responsive e-commerce website built with modern HTML, CSS, and JavaScript.
+                                Features include product filtering, shopping cart, and smooth checkout experience.</p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header"
+                            style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <h3>Weather Dashboard</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>Real-time weather application with interactive maps and forecasting. Utilizes modern APIs
+                                and provides a clean, intuitive interface for viewing weather data.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>Charts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header"
+                            style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <h3>Task Management App</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>Productive task manager with drag-and-drop functionality, priority levels, and local
+                                storage. Built with modern JavaScript patterns for optimal performance.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>LocalStorage</span>
+                                <span>Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <p>I'd love to hear from you! Whether you have a project in mind or just want to say hello, feel
+                        free to reach out.</p>
+                    <div class="contact-links">
+                        <a href="mailto:hello@example.com" class="contact-button">Email Me</a>
+                        <a href="#" class="contact-button social">LinkedIn</a>
+                        <a href="#" class="contact-button social">GitHub</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2023 My Portfolio</p>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Modern Portfolio. All rights reserved.</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>
