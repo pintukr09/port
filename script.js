@@ -86,5 +86,106 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Login Modal Functions
+const loginBtn = document.getElementById('loginBtn');
+const closeLogin = document.getElementById('closeLogin');
+const loginModal = document.getElementById('loginModal');
+const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+const modalBackdrop = document.getElementById('modalBackdrop');
+const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+const backToLogin = document.getElementById('backToLogin');
+const closeForgot = document.getElementById('closeForgot');
+const loginForm = document.getElementById('loginForm');
+const forgotForm = document.getElementById('forgotForm');
+
+function openLoginModal() {
+    loginModal.classList.add('active');
+    modalBackdrop.classList.add('active');
+}
+
+function closeLoginModal() {
+    loginModal.classList.remove('active');
+}
+
+function openForgotPasswordModal() {
+    loginModal.classList.remove('active');
+    forgotPasswordModal.classList.add('active');
+}
+
+function closeForgotPasswordModal() {
+    forgotPasswordModal.classList.remove('active');
+}
+
+function closeAllModals() {
+    loginModal.classList.remove('active');
+    forgotPasswordModal.classList.remove('active');
+    modalBackdrop.classList.remove('active');
+}
+
+// Event Listeners for Login Modal
+if (loginBtn) {
+    loginBtn.addEventListener('click', openLoginModal);
+}
+
+if (closeLogin) {
+    closeLogin.addEventListener('click', closeLoginModal);
+}
+
+if (closeForgot) {
+    closeForgot.addEventListener('click', closeForgotPasswordModal);
+}
+
+if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', closeAllModals);
+}
+
+if (forgotPasswordLink) {
+    forgotPasswordLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        openForgotPasswordModal();
+    });
+}
+
+if (backToLogin) {
+    backToLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeForgotPasswordModal();
+        loginModal.classList.add('active');
+        modalBackdrop.classList.add('active');
+    });
+}
+
+// Login Form Submission
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        console.log('Login attempt:', { email, password });
+        alert('Login successful! (Demo)');
+        closeAllModals();
+        loginForm.reset();
+    });
+}
+
+// Forgot Password Form Submission
+if (forgotForm) {
+    forgotForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const resetEmail = document.getElementById('resetEmail').value;
+        console.log('Password reset requested for:', resetEmail);
+        alert('Password reset link sent to ' + resetEmail + ' (Demo)');
+        closeAllModals();
+        forgotForm.reset();
+    });
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeAllModals();
+    }
+});
+
 // Log for development
 console.log('Modern Portfolio Loaded ✨');

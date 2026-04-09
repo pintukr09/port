@@ -21,6 +21,7 @@
                     <a href="#about" class="nav-link">About</a>
                     <a href="#projects" class="nav-link">Projects</a>
                     <a href="#contact" class="nav-link">Contact</a>
+                    <button class="login-btn" id="loginBtn">Login</button>
                 </nav>
                 <button class="hamburger" id="hamburger">
                     <span></span>
@@ -145,6 +146,50 @@
             <p>&copy; 2026 Modern Portfolio. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLogin">&times;</button>
+            <h2>Login</h2>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="form-button">Login</button>
+            </form>
+            <p class="forgot-link">
+                <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div class="modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeForgot">&times;</button>
+            <h2>Reset Password</h2>
+            <p class="modal-subtitle">Enter your email address and we'll send you a link to reset your password.</p>
+            <form class="forgot-form" id="forgotForm">
+                <div class="form-group">
+                    <label for="resetEmail">Email Address</label>
+                    <input type="email" id="resetEmail" name="resetEmail" required>
+                </div>
+                <button type="submit" class="form-button">Send Reset Link</button>
+            </form>
+            <p class="back-link">
+                <a href="#" id="backToLogin">Back to Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal Backdrop -->
+    <div class="modal-backdrop" id="modalBackdrop"></div>
 
     <script src="script.js"></script>
 </body>
